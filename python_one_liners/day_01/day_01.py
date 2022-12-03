@@ -1,1 +1,1 @@
-print(max(t:=sorted([sum(map(int,x.split("\n")))for x in open("d").read().rstrip().split("\n\n")],reverse=True)[:3]),sum(t))
+print(max(t:=sorted([sum(map(int,x.split("\n")))for x in open("d").read()[:-1].split("\n\n")])[-3:]),sum(t))
