@@ -1,0 +1,1 @@
+print(list(map(lambda e:sum(ord(x)-38-58*(ord(x)>90)for a,b,c in e for x in set(a)if x in b and x in c),[map(lambda y:[t:=y[:(s:=len(y)//2)],y[s:],t],d:=open("d").read().splitlines()),zip(d[::3],d[1::3],d[2::3])])))
