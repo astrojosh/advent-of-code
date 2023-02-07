@@ -38,18 +38,9 @@ class Group:
 
 
 def get_common_items(item_strings: list[str]) -> list[Item]:
-
-    combined_unique_items = [
-        unique_item for item_string in item_strings for unique_item in set(item_string)
-    ]
-
-    common_items = [
-        Item(x)
-        for x in set(combined_unique_items)
-        if combined_unique_items.count(x) == len(item_strings)
-    ]
-
-    return common_items
+    item_sets = (set(item_string) for item_string in item_strings)
+    common_items: set[str] = set.intersection(*item_sets)
+    return [Item(item) for item in common_items]
 
 
 def get_common_item(item_strings: list[str]) -> Item:
