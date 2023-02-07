@@ -29,9 +29,9 @@ class Rucksack:
         return get_common_item([self.compartment_1, self.compartment_2])
 
 
+@dataclass
 class Group:
-    def __init__(self, rucksacks: list[Rucksack]) -> None:
-        self.rucksacks = rucksacks
+    rucksacks: list[Rucksack]
 
     def get_common_item(self) -> Item:
         return get_common_item([rucksack.contents for rucksack in self.rucksacks])
