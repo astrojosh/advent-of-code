@@ -19,7 +19,7 @@ impl Elf {
         // Split on line breaks to seperate each elf calorie amount
         self.calories_list = raw_data
             .lines()
-            .map(|x| x.parse::<i32>().unwrap())
+            .map(|calories| calories.parse::<i32>().unwrap())
             .collect();
     }
 
@@ -45,7 +45,7 @@ impl Elves {
         // Split on blank lines to seperate each elf
         self.elves = input_data
             .split("\n\n")
-            .map(|x| Elf::new(x.to_string()))
+            .map(|elf_raw_data| Elf::new(elf_raw_data.to_string()))
             .collect();
     }
 
