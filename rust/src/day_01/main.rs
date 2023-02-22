@@ -4,7 +4,7 @@ struct Elf {
 }
 
 impl Elf {
-    fn new(raw_data: String) -> Elf {
+    fn new(raw_data: &str) -> Elf {
         let mut elf = Elf {
             calories_list: Vec::new(),
             total_calories: 0,
@@ -15,7 +15,7 @@ impl Elf {
         elf
     }
 
-    fn parse_data(&mut self, raw_data: String) {
+    fn parse_data(&mut self, raw_data: &str) {
         // Split on line breaks to seperate each elf calorie amount
         self.calories_list = raw_data
             .lines()
@@ -45,7 +45,7 @@ impl Elves {
         // Split on blank lines to seperate each elf
         self.elves = input_data
             .split("\n\n")
-            .map(|elf_raw_data| Elf::new(elf_raw_data.to_string()))
+            .map(|elf_raw_data| Elf::new(elf_raw_data))
             .collect();
     }
 
