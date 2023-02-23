@@ -4,8 +4,8 @@ struct Elf {
 }
 
 impl Elf {
-    fn new(raw_data: &str) -> Elf {
-        let mut elf = Elf {
+    fn new(raw_data: &str) -> Self {
+        let mut elf = Self {
             calories_list: Vec::new(),
             total_calories: 0,
         };
@@ -33,8 +33,8 @@ struct Elves {
 }
 
 impl Elves {
-    fn new(input_data: String) -> Elves {
-        let mut elves = Elves { elves: Vec::new() };
+    fn new(input_data: String) -> Self {
+        let mut elves = Self { elves: Vec::new() };
 
         elves.create_elves(input_data);
         elves.order_elves();
