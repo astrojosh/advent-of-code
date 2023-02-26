@@ -59,11 +59,9 @@ impl Elves {
     }
 
     fn get_top_n_elves_calories_sum(&self, num_elves: usize) -> i32 {
-        self.elves
-            .iter()
-            .take(num_elves)
-            .map(|elf| elf.total_calories)
-            .sum()
+        let top_n_elves = self.elves.iter().take(num_elves);
+        let top_n_elves_calories_sum = top_n_elves.map(|elf| elf.total_calories).sum();
+        top_n_elves_calories_sum
     }
 }
 
