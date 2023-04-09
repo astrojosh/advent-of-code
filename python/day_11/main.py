@@ -1,4 +1,3 @@
-from __future__ import annotations
 from dataclasses import dataclass
 from typing import Callable
 import operator
@@ -36,7 +35,7 @@ class Monkey:
     def process_items(self, worry_function: Callable[[int], int]):
         for item in self.items:
             self.process_item(item, worry_function)
-            
+
         self.items = []
 
 
